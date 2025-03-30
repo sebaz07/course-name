@@ -29,7 +29,3 @@ jobs:
           python-version: "3.11"  # Se especifica la versión de Python
           cache: "pip"  # Habilita caché para mejorar rendimiento
 
-      - name: Instalar dependencias (opcional)
-        run: |
-          if [ -f requirements.txt ];
-
