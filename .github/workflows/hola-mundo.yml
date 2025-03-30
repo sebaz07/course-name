@@ -28,7 +28,15 @@ jobs:
         uses: actions/setup-python@v5.5.0
         with:
           python-version: "3.11"  # Se especifica la versión de Python
-         
+   
+      - name: Setup NodeJs
+        uses: actions/setup-node@v4.3.0
+        with:
+          node-version: "18.19"
+
       - name: Ejecutar script Python
         run: python hola-mundo.py  # Ejecuta el script Python
+      
+      - name: Ejecutar Script NodeJs
+        run: node hola-mundo.js
 
