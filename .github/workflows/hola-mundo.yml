@@ -1,11 +1,12 @@
 # Nombre del workflow
-name: CI
+name: hola-mundo
 
 # Disparadores del workflow
 on:
   push:
     branches:
       - "main"
+      - "aprendiendo-github-actions"
   pull_request:
     branches:
       - "main"
@@ -28,4 +29,7 @@ jobs:
         with:
           python-version: "3.11"  # Se especifica la versión de Python
           cache: "pip"  # Habilita caché para mejorar rendimiento
+
+      - name: Ejecutar script Python
+        run: python hola-mundo.py  # Ejecuta el script Python
 
