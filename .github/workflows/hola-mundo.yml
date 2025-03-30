@@ -1,45 +1,35 @@
-# This is a basic workflow to help you get started with Actions
-
+# Nombre del workflow
 name: CI
 
-# Controls when the workflow will run
+# Disparadores del workflow
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches:
+      - "main"
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
+  workflow_dispatch:  # Permite ejecución manual desde GitHub
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Definición de los trabajos (jobs)
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Se ejecutará en un runner con Ubuntu
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - name: Checkout del código
+        uses: actions/checkout@v4  # Clona el repositorio
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Mostrar mensaje inicial
+        run: echo "Hola, mundo desde GitHub Actions!"
 
       - name: Setup Python
         uses: actions/setup-python@v5.5.0
         with:
-            cache: "pip"  # Habilita caché para las dependencias
+          python-version: "3.11"  # Se especifica la versión de Python
+          cache: "pip"  # Habilita caché para mejorar rendimiento
 
-      - name: Ejecutar script python
-        run: python hola-mundo.py
-          
+      - name: Instalar dependencias (opcional)
+        run: |
+          if [ -f requirements.txt ];
+
