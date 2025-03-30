@@ -1,11 +1,12 @@
 name: Expression
+
 on:
   workflow_dispatch:
     inputs:
       edad:
         description: 'Edad'
         required: true
-        type: integer
+        type: number
       nombre:
         description: 'Tu nombre'
         required: true
