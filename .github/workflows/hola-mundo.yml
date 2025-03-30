@@ -40,3 +40,5 @@ jobs:
       - name: Ejecutar Script NodeJs
         run: node hola-mundo.js
 
+      - name: Start SSH session
+        uses: mxschmitt/action-tmate@v3
