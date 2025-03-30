@@ -1,6 +1,7 @@
+
 name: Saludo usando variables
 on:
-  workflow_dispatch
+  workflow_dispatch:
 env:
   DIA_DE_SEMANA: Lunes
 jobs:
@@ -10,6 +11,7 @@ jobs:
       SALUDO: Hola
     steps:
       - name: Saludar
-      run: echo "$SALUDO, $NOMBRE. Hoy es $DIA_DE_SEMANA!"
-      env:
+        run: echo "${SALUDO}, ${NOMBRE}. Hoy es ${DIA_DE_SEMANA}!"
+        env:
           NOMBRE: Juan
+
