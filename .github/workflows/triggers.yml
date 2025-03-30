@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - aprendiendo-github-actions
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
