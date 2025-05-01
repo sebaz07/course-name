@@ -36,7 +36,7 @@ jobs:
           echo test, and deploy your project.
 
       - name: Setup Python
-        uses: actions/setup-python@v5.5.0
+        uses: actions/setup-python@v5.6.0
         with:
             cache: "pip"  # Habilita caché para las dependencias
 
